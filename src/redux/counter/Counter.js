@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   decrement,
@@ -16,7 +16,9 @@ export function Counter() {
   const [incrementAmount, setIncrementAmount] = useState('2');
 
   const incrementValue = Number(incrementAmount) || 0;
-
+  useEffect(() => {
+    dispatch(incrementAsync());
+  }, [dispatch]);
   return (
     <div>
       <div className={styles.row}>
@@ -51,7 +53,7 @@ export function Counter() {
         </button>
         <button
           className={styles.asyncButton}
-          onClick={() => dispatch(incrementAsync(incrementValue))}
+          onClick={() => dispatch(incrementAsync())}
         >
           Add Async
         </button>
