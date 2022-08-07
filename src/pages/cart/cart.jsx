@@ -1,13 +1,13 @@
 import React from 'react';
 
-class Main extends React.PureComponent {
+class Cart extends React.PureComponent {
   render() {
     return (
       <p>
-        Main
+        Cart
       </p>
     );
   }
 }
 
-export default Main;
+export default Cart;
